@@ -1,0 +1,22 @@
+### compilation ###
+cd YOUR_PATH/src/simba_sal_sim/
+g++ *.cpp -std=c++11 -o simba_sal_sim
+
+### run ###
+run the executable without any arguments to learn on run options:
+
+The program takes parameter values using '=' pairs. The order does not matter.
+The parameter names are:
+type_model (long-indel / power-law inspired: LI/PL, defaults to 'LI')
+r_param (controls tendency for longer indel under the long indel model, range: [0,1))
+basic_mu (controls the total per-position deletion rate under the long indel model, range: [0,1))
+length_of_t (length of branch connecting the ancestor to descendant)
+out_files_prefix (where to write the output, parameter values will be added to out_files_prefix)
+number_postiotions_to_write (from the true trimmed PWA, defaults to 5000, won't exceed the length of the trimmed PWA)
+A (controls tendency for longer indel under the power-law inspired model, needed only if 'PL', range: (1,))
+IR (controls the ratio of indel to substitution events, needed only if 'PL', range: [0,1])
+
+Example usage:
+PATH/simba_sal_sim r_param=0.3 basic_mu=0.1 length_of_t=1 out_files_prefix=PATH/SimBa-SAl_sim/
+
+
